@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>Let's play a game</title>
+<link rel="stylesheet" href="project3.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="function.js"></script>
+
+
+
+</head>
+<body>
+	<div id="container">
+		<div id="board">
+			<div id="board_content">
+				<div id="score">
+				Score: 0
+				</div>
+				<div id="title">
+				Mindflash
+				</div>
+				<div id="turns">
+				Turns: 0
+				</div>
+			</div>	
+		</div>
+		<div id="middle">
+			<div id="new_game">
+				<a href="assign3.html" id="new_game_button">START <br>NEW <br>GAME</a>
+			</div>
+			<div id="grid">
+				<div class="rows">
+					<div id="columns">
+					<input type="button" id="unhide1" value=" " />
+					</div>
+					<div id="columns">
+					<input type="button" id="unhide2" value=" " />				
+					</div>
+					<div id="columns">
+					<input type="button" id="unhide3" value=" " />				
+					</div>
+					<div id="columns">
+					<input type="button" id="unhide4" value=" " />				
+					</div>
+				</div>
+				<div class="rows">
+					<div id="columns">
+					<input type="button" id="unhide5" value=" " />				
+					</div>
+					<div id="columns">
+					<input type="button" id="unhide6" value=" " />
+					</div>
+					<div id="columns">
+					<input type="button" id="unhide7" value=" " />
+					</div>
+					<div id="columns">
+					<input type="button" id="unhide8" value=" " />
+					</div>
+				</div>
+				<div class="rows">
+					<div id="columns">
+					<input type="button" id="unhide9" value=" " ="first(9)" />
+					</div>
+					<div id="columns">
+					<input type="button" id="unhide10" value=" " />
+					</div>
+					<div id="columns">
+					<input type="button" id="unhide11" value=" " />
+					</div>
+					<div id="columns">
+					<input type="button" id="unhide12" value=" " />
+					</div>
+				</div>		
+				<div class="rows">
+					<div id="columns">
+					<input type="button" id="unhide13" value=" " />
+					</div>
+					<div id="columns">
+					<input type="button" id="unhide14" value=" " />
+					</div>
+					<div id="columns">
+					<input type="button" id="unhide15" value=" " />
+					</div>
+					<div id="columns">
+					<input type="button" id="unhide16" value=" " />
+					</div>
+				</div>
+		</div>	
+			
+	</div>
+
+<script type="text/javascript">
+	
+	var letters=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+	
+	var game_letters = new Array();
+	
+	function randomize(array){
+		while (array.length < 8){
+			rand = Math.floor(Math.random()*letters.length);
+			if(array.indexOf(letters[rand]) > -1) continue;	
+			array[array.length] = letters[rand];
+		}
+	}
+	
+	function shuffle(array){
+		var current = array.length, temp, random;
+		while(0 !== current){
+			random = Math.ceil(Math.random()*current);
+			current--;
+			temp = array[current];
+			array[current] = array[random];
+			array[random] = temp;
+			}
+	}
+	
+	randomize(game_letters);	
+	game_letters = game_letters.concat(game_letters);
+	shuffle(game_letters);
+	
+	var m = 0;
+	var counter = 0;
+	var score = 0;
+	var active=0;
+	
+	function check(i){
+	
+	if(active==0){
+		document.getElementById('unhide'+i).value = game_letters[i-1];
+		active = 1;
+	}
+	
+	else if (m==i) {
+		document.getElementById('unhide'+i).value=" ";
+		counter++;
+		active = 0;
+	}
+	
+	else if(m!=i && game_letters[m-1] === game_letters[i-1])
+		{	
+		document.getElementById('unhide'+i).value= game_letters[i-1];
+		setTimeout(function(){document.getElementById('unhide'+m).disabled = true;}, 250);
+		setTimeout(function(){document.getElementById('unhide'+i).disabled = true;}, 250);	
+		counter++;
+		score+=10;
+		active = 0;
+		
+		}
+	
+	else 
+	{
+		document.getElementById('unhide'+i).value= game_letters[i-1];
+		setTimeout(function(){document.getElementById('unhide'+m).value =" ";}, 250);
+		setTimeout(function(){document.getElementById('unhide'+i).value =" ";}, 250);
+		active = 0;
+		counter++;
+		score-=5;
+	}
+	
+	
+	setTimeout(function(){ m = i;}, 500);
+	console.log(counter);
+	document.getElementById("turns").innerHTML = "Turns: "+counter;
+	document.getElementById("score").innerHTML = "Score: "+score;
+	
+
+	}
+	
+	
+	document.getElementById('unhide1').onclick=function(){
+		check(1);
+	}
+	
+	document.getElementById('unhide2').onclick=function(){
+		check(2);
+	}
+	
+	document.getElementById('unhide3').onclick=function(){
+		check(3);
+	}
+	
+	document.getElementById('unhide4').onclick=function(){
+		check(4);
+	}
+	
+	document.getElementById('unhide5').onclick=function(){
+		check(5);
+	}
+	
+	document.getElementById('unhide6').onclick=function(){
+		check(6);
+	}
+	
+	document.getElementById('unhide7').onclick=function(){
+		check(7);
+	}
+	
+	document.getElementById('unhide8').onclick=function(){
+		check(8);
+	}
+	
+	document.getElementById('unhide9').onclick=function(){
+		check(9);
+	}
+	
+	document.getElementById('unhide10').onclick=function(){
+		check(10);
+	}
+	
+	document.getElementById('unhide11').onclick=function(){
+		check(11);
+	}
+	
+	document.getElementById('unhide12').onclick=function(){
+		check(12);
+	}
+	
+	document.getElementById('unhide13').onclick=function(){
+		check(13);
+	}
+	
+	document.getElementById('unhide14').onclick=function(){
+		check(14);
+	}
+	
+	document.getElementById('unhide15').onclick=function(){
+		check(15);
+	}
+	
+	document.getElementById('unhide16').onclick=function(){
+		check(16);
+	}
+	
+</script>
+
+
+	
+	<!-- <input type="button" id="unhide" value=" " onClick="first()" /> -->
+
+</body>
+</html>
