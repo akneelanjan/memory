@@ -98,7 +98,7 @@ html, body{
 	display: inline-block;
 	height: 122px;
 	width: 122px;
-	box-shadow: 3px 3px 5px #8A0017;
+	box-shadow: 3px 3px 5px #8A0017, 0 0 30px #8A0017;
 }
 
 #unhide1, #unhide2, #unhide3, #unhide4, #unhide5, #unhide6, #unhide7, #unhide8, #unhide9, #unhide10, #unhide11, #unhide12, #unhide13, #unhide14, #unhide15, #unhide16{
