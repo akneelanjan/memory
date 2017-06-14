@@ -102,11 +102,13 @@ html, body{
 
 #unhide1, #unhide2, #unhide3, #unhide4, #unhide5, #unhide6, #unhide7, #unhide8, #unhide9, #unhide10, #unhide11, #unhide12, #unhide13, #unhide14, #unhide15, #unhide16{
 	font-size: 4em;
+	color: #8A0017;
 	position: relative;
 	display: flex;
 	height: 122px;
 	width: 122px;
 	cursor: pointer;
+	box-shadow: 3px 3px 5px #8A0017, 0px 0px 30px #8A0017, 0 0 5px #8A0017;
 }
 
 #new_game{
