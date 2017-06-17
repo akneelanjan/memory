@@ -102,7 +102,7 @@ html, body{
 	box-shadow: 3px 3px 5px #8A0017, 0px 0px 30px #8A0017;
 }
 
-#unhide1, #unhide2, #unhide3, #unhide4, #unhide5, #unhide6, #unhide7, #unhide8, #unhide9, #unhide10, #unhide11, #unhide12, #unhide13, #unhide14, #unhide15, #unhide16{
+#hide1, #unhide1, #unhide2, #unhide3, #unhide4, #unhide5, #unhide6, #unhide7, #unhide8, #unhide9, #unhide10, #unhide11, #unhide12, #unhide13, #unhide14, #unhide15, #unhide16{
 	font-size: 4em;
 	color: #8A0017;
 	position: relative;
@@ -136,9 +136,8 @@ html, body{
 }
 
 #new_game1{
-	display: flex;
 	position: absolute;
-	margin: 80px 75px;
+	margin: 50px 50px;
 	text-align: center;
 }
 
@@ -161,8 +160,8 @@ html, body{
 }
 
 .element {
-  height: 250px;
-  width: 250px;
+  height: 260px;
+  width: 260px;
   margin: 220px auto 0 auto;
   background-color: red;
   animation-name: stretch;
@@ -174,6 +173,7 @@ html, body{
   animation-fill-mode: none;
   animation-play-state: running;
 }
+
 
 @keyframes stretch {
   0% {
@@ -190,6 +190,35 @@ html, body{
   }
 }
 
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, .95, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
 
 @keyframes fadeOut{
   from {
@@ -198,5 +227,19 @@ html, body{
 
   to {
     opacity: 0;
+  }
+}
+
+@keyframes pulse{
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
   }
 }
