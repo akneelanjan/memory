@@ -32,6 +32,7 @@
 				<a href="index.html" id="new_game_button">START <br>NEW <br>GAME</a>
 			</div>
 			<div id="grid">
+				
 				<div class="rows">
 					<div id="columns">
 					<input type="button" id="unhide1" value=" " />
@@ -96,7 +97,8 @@
 
 	<div class="element">
 		<div id="new_game1">
-				<a href="index.html" id="new_game_button">Play again</a>
+				<img src="thumbs_up.png" height="150px" width="150px">
+				<a href="index.html"><img src="replay.png" height="50px" width="50px"></a>
 		</div>
 	</div>
 
@@ -136,25 +138,26 @@
 	var score = 0;
 	var active=0;
 	
-	/*function complete(){
-	if(document.getElementById('unhide1').value != "" && document.getElementById('unhide2').value != "" && document.getElementById('unhide3').value != "" && document.getElementById('unhide4').value != "" && document.getElementById('unhide5').value != "" && document.getElementById('unhide6').value != "" && document.getElementById('unhide7').value != "" && document.getElementById('unhide8').value != "" && document.getElementById('unhide9').value != "" && document.getElementById('unhide10').value != "" && document.getElementById('unhide11').value != "" && document.getElementById('unhide12').value != "" && document.getElementById('unhide13').value != "" && document.getElementById('unhide14').value != "" && document.getElementById('unhide15').value != "" && document.getElementById('unhide16').value != "" )	
-	{		alert("Game Over");
-	}
-	}*/
 	
 	function complete(){
 	if(document.getElementById('unhide1').disabled === true && document.getElementById('unhide2').disabled === true && document.getElementById('unhide3').disabled === true && document.getElementById('unhide4').disabled === true && document.getElementById('unhide5').disabled === true && document.getElementById('unhide6').disabled === true && document.getElementById('unhide7').disabled === true && document.getElementById('unhide8').disabled === true && document.getElementById('unhide9').disabled === true && document.getElementById('unhide10').disabled === true && document.getElementById('unhide11').disabled === true && document.getElementById('unhide12').disabled === true && document.getElementById('unhide13').disabled === true && document.getElementById('unhide14').disabled === true && document.getElementById('unhide15').disabled === true && document.getElementById('unhide16').disabled === true)
-	{	setTimeout(function(){}, 1000);
-		$('#middle').fadeOut(2000);
-		$('.element').show();
-		
+	{	
+		$('#middle').fadeOut(2000).hide(1);
+		setTimeout(function(){$('.element').fadeIn(2000);}, 2000);
 	}
 	}
+	
+	
 	
 	
 	function check(i){
 	
+	document.getElementById('unhide'+i).style.animation = "pulse 0.5s 2 0s";
+	document.getElementById('unhide'+i).style.animationIterationCount = "infinite";
+	setTimeout(function(){}, 500);
+	
 	if(active==0){
+	
 		document.getElementById('unhide'+i).value = game_letters[i-1];
 		active = 1;
 	}
@@ -170,6 +173,10 @@
 		document.getElementById('unhide'+i).value= game_letters[i-1];
 		setTimeout(function(){document.getElementById('unhide'+m).disabled = true;}, 25);		
 		setTimeout(function(){document.getElementById('unhide'+i).disabled = true;}, 25);
+		document.getElementById('unhide'+m).style.animationIterationCount = "0";
+		document.getElementById('unhide'+i).style.animationIterationCount = "0";
+		document.getElementById('unhide'+m).style.animation = "rubberBand 1s";
+		document.getElementById('unhide'+i).style.animation = "rubberBand 1s";
 		setTimeout(function(){complete();}, 50);	
 		counter++;
 		score+=10;
