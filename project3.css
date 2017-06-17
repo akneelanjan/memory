@@ -141,18 +141,6 @@ html, body{
 	text-align: center;
 }
 
-
-#treasure{
-	position: absolute;
-	top: 0;
-	margin: 0;
-	background-image: url("treasure.gif");
-	background-repeat: none;
-	background-size: contain;
-	height: 100%;
-	width: 100%;
-}
-
 .new{
 	display: flex;
 	align-items: center;
