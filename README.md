@@ -3,7 +3,7 @@
 
 ### Features:
 1. This game is based on the old concept of matching a pair of tiles with same alphabets.
-2. The randomization algorithm is such that the grid is filled with random unique pairs.
+2. The randomization algorithm is such that the 4x4 grid is filled with 8 random unique pairs of letters out of the 26 english alphabets.
 3. There are "score" and "turns" counters.
 4. The UI is very user-friendly. 
 5. Each event on the page occurs with an animation that makes the game eye-catching. 
