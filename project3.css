@@ -25,6 +25,7 @@ html, body{
 
 #board{
 	margin: 0;
+	top: 0;
 	display: flex;
 	position: relative;
 	min-height: 100px;
