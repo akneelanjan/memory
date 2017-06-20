@@ -342,9 +342,9 @@ html, body{
 	}
 	
         .element{
- 		position: absolute;
+ 		position: relative;
 		margin: 0;
-		top: 200px;
+		top: 10px;
 		
 	}
 }
