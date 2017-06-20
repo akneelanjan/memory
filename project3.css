@@ -256,3 +256,88 @@ html, body{
     transform: scale3d(1, 1, 1);
   }
 }
+
+@media only screen and (max-width: 500px) {
+	#board{
+	position: fixed;
+	margin: 0;
+	display: block flex;
+	min-height: 100px;
+	width: 100%;
+	min-width: 100vw;
+	z-index: 5;
+	}
+	
+	#board_content{
+		margin: 30px 0 30px 0;
+		display: block flex;
+		width: 100%;
+		min-width: 100vw;
+	}
+	
+	#score{
+		width: 20vw;
+		margin-top: 7vh;
+		margin-left: 0px;
+		font-size: 5vw;
+	}
+	
+	#turns{
+		width: 20vw;
+		margin-top: 7vh;
+		margin-right: 0px;
+		font-size: 5vw;
+	}
+	
+	#title{
+		font-size: 15vw;
+	}
+	
+	#middle{
+		min-width: 100vw;
+	}
+	
+	#new_game{
+		top: 800px;
+		margin: 10px;
+		width: 80vw;
+		height: 100px;
+	}
+	
+	#new_game_button{
+		font-size: 10vw;
+	}
+	#instructions{
+		top: 200px;
+		margin: 10px;
+		width: 80vw;
+		font-size: 5vw;
+	}
+	
+	.rows{
+		width: 100%;
+		min-width: 300px;
+		align-content: center;
+		align-items: center;
+	}
+	
+	#columns, #unhide1, #unhide2, #unhide3, #unhide4, #unhide5, #unhide6, #unhide7, #unhide8, #unhide9, #unhide10, #unhide11,
+	#unhide12, #unhide13, #unhide14, #unhide15, #unhide16{
+		width: 20vw;
+		height: 20vw;
+		font-size: 40px;
+	}
+	
+	#grid{
+		box-sizing: border-box;
+		top: 400px;
+		margin: 6vw;
+		width: 100%;
+		padding: 0;
+		min-width: 300px;
+		align-self: center;
+		align-content: center;
+		align-items: center;
+		justify-content: center;
+	}
+}
