@@ -342,6 +342,9 @@ html, body{
 	}
 	
         .element{
- 		top: 200px;
+ 		position: absolute;
+		margin: 0;
+		top: 200px;
+		
 	}
 }
