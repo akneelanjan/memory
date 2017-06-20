@@ -316,7 +316,7 @@ html, body{
 	
 	.rows{
 		width: 100%;
-		min-width: 300px;
+		min-width: 320px;
 		align-content: center;
 		align-items: center;
 	}
@@ -334,7 +334,7 @@ html, body{
 		margin: 6vw;
 		width: 100%;
 		padding: 0;
-		min-width: 300px;
+		min-width: 320px;
 		align-self: center;
 		align-content: center;
 		align-items: center;
@@ -342,6 +342,6 @@ html, body{
 	}
 	
         .element{
- top: 200px;
+ 		top: 200px;
 	}
 }
